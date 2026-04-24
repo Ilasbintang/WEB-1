@@ -34,10 +34,20 @@
         </div>
         <div id="cart-items"></div>
         <div class="cart-footer">
-            <div class="total">Total: <span id="total-price">Rp 0</span></div>
-            <button class="btn-checkout" onclick="checkoutWhatsApp()">Pesan ke WhatsApp</button>
-        </div>
+    <div class="user-details">
+        <input type="text" id="user-name" placeholder="Nama Lengkap" required>
+        <textarea id="user-address" placeholder="Alamat Pengiriman Lengkap" rows="2" required></textarea>
     </div>
+    
+    <div class="total-container">
+        <span>Total Estimasi:</span>
+        <span id="total-price" class="price-big">Rp 0</span>
+    </div>
+    
+    <button class="btn-checkout" onclick="checkoutWhatsApp()">
+        Pesan Lewat WhatsApp
+    </button>
+
 
     <div id="notification" class="notification">
         <span id="notif-message"></span>

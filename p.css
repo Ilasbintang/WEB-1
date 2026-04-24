@@ -360,3 +360,28 @@ html {
     font-size: 70px; /* Gunakan PX agar ukurannya konsisten di semua layar */
     text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
 }
+
+.user-details {
+    padding: 15px;
+    background: #f9f9f9;
+    border-top: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-details input, 
+.user-details textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.user-details input:focus, 
+.user-details textarea:focus {
+    border-color: #2d5a27; /* Hijau Kios Pangan */
+}

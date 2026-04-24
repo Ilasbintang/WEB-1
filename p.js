@@ -3,7 +3,7 @@ const products = [
     { 
         id: 1, 
         name: "Beras SPHP", 
-        img: "Cuplikan layar 2026-04-24 160553.png", // Pastikan file gambar ada
+        img: "Gemini_Generated_Image_wiwo1awiwo1awiwo (1).png", // Pastikan file gambar ada
         variants: [
             { size: "5kg", price: 62000 }
         
@@ -12,7 +12,7 @@ const products = [
     { 
         id: 3, 
         name: "Beras Santap", 
-        img: "Cuplikan layar 2026-04-24 160258.png", 
+        img: "Gemini_Generated_Image_bpxs70bpxs70bpxs.png", 
         variants: [
             { size: "5kg", price: 85000 },
             { size: "10kg", price: 170000 },
@@ -22,7 +22,7 @@ const products = [
     { 
         id: 2, 
         name: "Rahma 35", 
-        img: "Cuplikan layar 2026-04-24 165736.png", 
+        img: "Gemini_Generated_Image_jatohxjatohxjato.png", 
         variants: [
             { size: "5kg", price: 80000 },
             { size: "10kg", price: 155000 },
@@ -32,13 +32,64 @@ const products = [
     { 
         id: 4, 
         name: "Melon", 
-        img: "Cuplikan layar 2026-04-24 170142.png", 
+        img: "Gemini_Generated_Image_aswqj7aswqj7aswq.png",
+        variants: [
+            { size: "5kg", price: 80000 },
+            { size: "10kg", price: 155000 },
+            { size: "25kg", price: 380000 }
+        ]
+    },
+    { 
+        id: 5, 
+        name: "Mahkota Nusantara", 
+        img: "Gemini_Generated_Image_we7n38we7n38we7n.png",
+        variants: [
+            { size: "5kg", price: 80000 },
+            { size: "10kg", price: 155000 },
+            { size: "25kg", price: 380000 }
+        ]
+    },
+    { 
+        id: 6, 
+        name: "Elang 88", 
+        img: "Gemini_Generated_Image_tyskwxtyskwxtysk.png",
+        variants: [
+            { size: "5kg", price: 80000 },
+            { size: "10kg", price: 155000 },
+            { size: "25kg", price: 380000 }
+        ]
+    },
+    { 
+        id: 7, 
+        name: "Jambu kristal", 
+        img: "Gemini_Generated_Image_mo7rocmo7rocmo7r.png",
+        variants: [
+            { size: "5kg", price: 80000 },
+            { size: "10kg", price: 155000 },
+            { size: "25kg", price: 380000 }
+        ]
+    },
+    { 
+        id: 8, 
+        name: "USBAR 54", 
+        img: "Gemini_Generated_Image_tvhk9stvhk9stvhk.png",
+        variants: [
+            { size: "5kg", price: 80000 },
+            { size: "10kg", price: 155000 },
+            { size: "25kg", price: 380000 }
+        ]
+    },
+    { 
+        id: 9, 
+        name: "Anoa Sultra", 
+        img: "Gemini_Generated_Image_9yws1x9yws1x9yws.png",
         variants: [
             { size: "5kg", price: 80000 },
             { size: "10kg", price: 155000 },
             { size: "25kg", price: 380000 }
         ]
     }
+
 ];
 
 let cart = [];
@@ -142,10 +193,38 @@ function showNotification(msg) {
 }
 
 function checkoutWhatsApp() {
-    if (cart.length === 0) return alert("Keranjang kosong!");
-    let msg = "Halo Kios Pangan Harapan, saya mau pesan:%0A";
-    cart.forEach(i => msg += `- ${i.name} ${i.size} (x${i.quantity})%0A`);
-    window.open(`https://wa.me/628123456789?text=${msg}`, '_blank');
+    const name = document.getElementById('user-name').value;
+    const address = document.getElementById('user-address').value;
+
+    // Validasi: Cek apakah keranjang kosong
+    if (cart.length === 0) {
+        alert("Keranjang Anda masih kosong!");
+        return;
+    }
+
+    // Validasi: Cek apakah nama dan alamat sudah diisi
+    if (!name || !address) {
+        alert("Mohon lengkapi Nama dan Alamat pengiriman terlebih dahulu.");
+        return;
+    }
+
+    let message = `*PESANAN BARU - KIOS PANGAN HARAPAN*%0A%0A`;
+    message += `*Nama:* ${name}%0A`;
+    message += `*Alamat:* ${address}%0A`;
+    message += `--------------------------------%0A`;
+    
+    cart.forEach(item => {
+        message += `• ${item.name} (${item.size}) x${item.quantity}%0A`;
+    });
+
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    message += `--------------------------------%0A`;
+    message += `*Total Pembayaran: Rp ${total.toLocaleString()}*%0A%0A`;
+    message += `Mohon segera diproses ya, terima kasih!`;
+
+    // Ganti nomor di bawah dengan nomor WhatsApp toko Anda
+    const phoneNumber = "6282292533311"; 
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
 }
 
 displayProducts();
