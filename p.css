@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+nav {
+    background: #2d5a27;
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo span {
+    color: #ffd700;
+}
+
+.cart-icon {
+    cursor: pointer;
+    font-size: 1.2rem;
+    background: rgba(255,255,255,0.2);
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+/* Hero Section */
+.hero {
+    /* Gunakan nama file foto Anda di dalam url() */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('WhatsApp Image 2026-04-24 at 15.52.23.jpeg'); 
+    
+    background-size: cover;      /* Memastikan gambar menutupi seluruh area */
+    background-position: center; /* Memastikan gambar tetap di tengah */
+    background-attachment: fixed;/* Opsional: Efek parallax saat di-scroll */
+    color: white;
+    text-align: center;
+    padding: 100px 0;            /* Menambah ruang atas & bawah agar gambar lebih terlihat */
+}
+
+.hero h2 { font-size: 2.5rem; }
+
+/* Product Grid */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 40px 0;
+}
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover { transform: translateY(-5px); }
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-info { padding: 20px; }
+.product-info h3 { margin-bottom: 10px; }
+.product-price { color: #2d5a27; font-weight: bold; font-size: 1.2rem; }
+
+.btn-add {
+    display: block;
+    width: 100%;
+    background: #2d5a27;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Sidebar Keranjang */
+.sidebar {
+    position: fixed;
+    right: -350px;
+    top: 0;
+    width: 350px;
+    height: 100%;
+    background: white;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transition: 0.4s;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar.active { right: 0; }
+
+.sidebar-header {
+    padding: 20px;
+    background: #2d5a27;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+#cart-items { flex: 1; overflow-y: auto; padding: 20px; }
+
+.cart-footer { padding: 20px; border-top: 1px solid #eee; }
+
+.btn-checkout {
+    width: 100%;
+    background: #25d366;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #333;
+    color: white;
+    margin-top: 40px;
+}
+
+/* Styling Item di dalam Keranjang */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item-info h4 {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-item-controls button {
+    background: #eee;
+    border: none;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.cart-item-controls button:hover {
+    background: #ddd;
+}
+
+.cart-item-controls .btn-remove {
+    background: #ff4d4d;
+    color: white;
+    margin-left: 10px;
+}
+
+.cart-item-controls .btn-remove:hover {
+    background: #cc0000;
+}
+
+/* Notifikasi Toast */
+.notification {
+    position: fixed;
+    bottom: -100px; /* Sembunyi di bawah layar */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2d5a27; /* Hijau sesuai tema Kios Pangan */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: bottom 0.5s ease; /* Efek animasi naik-turun */
+    z-index: 2000;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Munculkan notifikasi */
+.notification.show {
+    bottom: 30px; /* Naik ke atas layar */
+}
+
+/* Tambahkan ikon centang kecil di depan teks */
+.notification::before {
+    content: '✅';
+}
+
+/* Penataan Menu Navigasi */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+    color: #ffd700; /* Warna emas saat diarahkan kursor */
+}
+
+/* Membuat scroll halaman menjadi halus */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsif untuk HP: Sembunyikan menu atau atur jarak */
+@media (max-width: 600px) {
+    .nav-links {
+        display: none; /* Sembunyikan di layar sangat kecil agar tidak berantakan */
+    }
+}
+
+/* Menandai menu yang sedang dibuka */
+.nav-links a.active {
+    color: #ffd700;
+    border-bottom: 2px solid #ffd700;
+}
+
+/* Halaman Beranda Full Screen */
+.hero-full {
+    height: calc(100vh - 70px); /* Layar penuh minus tinggi navbar */
+    background: url('WhatsApp Image 2026-04-24 at 15.52.23.jpeg') no-repeat center/cover;
+    color: white;
+    text-align: center;
+}
+
+.hero-overlay {
+    background: rgba(0,0,0,0.7);
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.divider {
+    width: 60px;
+    height: 4px;
+    background: #ffd700;
+    margin: 20px auto;
+}
+
+.btn-main {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #2d5a27;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Jarak konten untuk halaman produk */
+.page-content {
+    padding: 40px 20px;
+}
+
+.product-info label {
+    display: block;
+    font-size: 0.8rem;
+    margin-top: 10px;
+    color: #666;
+}
+
+.product-info select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+.product-price {
+    font-size: 1.3rem;
+    color: #2d5a27;
+    font-weight: bold;
+    margin-bottom: 10px;
+}

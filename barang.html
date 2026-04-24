@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk - Kios Pangan Harapan</title>
+    <link rel="stylesheet" href="p.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="container navbar">
+            <h1 class="logo">Kios Pangan<span> Harapan</span></h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="produk.html" class="active">Barang</a></li>
+            </ul>
+            <div class="cart-icon" onclick="toggleCart()">
+                🛒 <span id="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container page-content">
+        <h2 class="section-title">Katalog Produk Beras</h2>
+        <div class="products" id="product-list">
+            </div>
+    </main>
+
+    <div id="cart-sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>Keranjang Belanja</h3>
+            <button onclick="toggleCart()">×</button>
+        </div>
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="total">Total: <span id="total-price">Rp 0</span></div>
+            <button class="btn-checkout" onclick="checkoutWhatsApp()">Pesan ke WhatsApp</button>
+        </div>
+    </div>
+
+    <div id="notification" class="notification">
+        <span id="notif-message"></span>
+    </div>
+
+    <script src="p.js"></script>
+</body>
+</html>
