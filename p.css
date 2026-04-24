@@ -385,3 +385,48 @@ html {
 .user-details textarea:focus {
     border-color: #2d5a27; /* Hijau Kios Pangan */
 }
+
+/* --- Penyesuaian Lebar Kontainer --- */
+.container {
+    width: 95%; /* Gunakan persentase agar fleksibel */
+    max-width: 1200px; /* Batas maksimal untuk laptop */
+    margin: 0 auto;
+}
+
+/* --- Mengatur Kartu Produk agar Besar di HP --- */
+@media screen and (max-width: 768px) {
+    /* Membuat kartu produk berjejer 2 kolom (atau 1 jika ingin lebih besar lagi) */
+    #product-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+        gap: 20px;
+    }
+
+    .product-card {
+        width: 100%; /* Kartu mengikuti lebar kolom */
+    }
+
+    /* Memperbesar teks judul di Beranda untuk HP */
+    .hero-full .welcome-title {
+        font-size: 2.5rem; /* Ukuran yang pas untuk layar HP */
+    }
+
+    .hero-full .welcome-title span {
+        font-size: 1.2rem;
+    }
+}
+
+/* --- Perbaikan Error 'shadow' yang Anda alami --- */
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Gunakan 'box-shadow', bukan 'shadow' */
+    transition: transform 0.3s ease;
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px; /* Berikan tinggi yang cukup agar gambar terlihat besar */
+    object-fit: cover; /* Agar gambar tidak gepeng */
+}
