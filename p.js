@@ -213,7 +213,7 @@ function checkoutWhatsApp() {
     message += `Mohon segera diproses ya, terima kasih!`;
 
     // Ganti nomor di bawah dengan nomor WhatsApp toko Anda
-    const phoneNumber = "621327895047";
+    const phoneNumber = "6282292533311";
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
 }
 
