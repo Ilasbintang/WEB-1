@@ -16,7 +16,7 @@ const products = [
         variants: [
             { size: "5kg", price: 85000 },
             { size: "10kg", price: 170000 },
-            { size: "25kg", price: 400000 }
+            { size: "25kg", price: 405000 }
         ]
     },
     { 
@@ -24,9 +24,9 @@ const products = [
         name: "Rahma 35", 
         img: "Gemini_Generated_Image_jatohxjatohxjato.png", 
         variants: [
-            { size: "5kg", price: 80000 },
-            { size: "10kg", price: 155000 },
-            { size: "25kg", price: 380000 }
+            { size: "5kg", price: 85000 },
+            { size: "10kg", price: 170000 },
+            { size: "25kg", price: 400000 }
         ]
     },
     { 
@@ -34,9 +34,9 @@ const products = [
         name: "Melon", 
         img: "Gemini_Generated_Image_aswqj7aswqj7aswq.png",
         variants: [
-            { size: "5kg", price: 80000 },
-            { size: "10kg", price: 155000 },
-            { size: "25kg", price: 380000 }
+            { size: "5kg", price: 79000 },
+            { size: "10kg", price: 158000 },
+            { size: "25kg", price: 385000 }
         ]
     },
     { 
@@ -44,9 +44,7 @@ const products = [
         name: "Mahkota Nusantara", 
         img: "Gemini_Generated_Image_we7n38we7n38we7n.png",
         variants: [
-            { size: "5kg", price: 80000 },
-            { size: "10kg", price: 155000 },
-            { size: "25kg", price: 380000 }
+            { size: "25kg", price: 400000 }
         ]
     },
     { 
@@ -54,9 +52,7 @@ const products = [
         name: "Elang 88", 
         img: "Gemini_Generated_Image_tyskwxtyskwxtysk.png",
         variants: [
-            { size: "5kg", price: 80000 },
-            { size: "10kg", price: 155000 },
-            { size: "25kg", price: 380000 }
+            { size: "25kg", price: 390000 }
         ]
     },
     { 
@@ -64,9 +60,7 @@ const products = [
         name: "Jambu kristal", 
         img: "Gemini_Generated_Image_mo7rocmo7rocmo7r.png",
         variants: [
-            { size: "5kg", price: 80000 },
-            { size: "10kg", price: 155000 },
-            { size: "25kg", price: 380000 }
+            { size: "25kg", price: 370000 }
         ]
     },
     { 
@@ -74,19 +68,15 @@ const products = [
         name: "USBAR 54", 
         img: "Gemini_Generated_Image_tvhk9stvhk9stvhk.png",
         variants: [
-            { size: "5kg", price: 80000 },
-            { size: "10kg", price: 155000 },
-            { size: "25kg", price: 380000 }
+            { size: "25kg", price: 370000 }
         ]
     },
     { 
         id: 9, 
         name: "Anoa Sultra", 
         img: "Gemini_Generated_Image_9yws1x9yws1x9yws.png",
-        variants: [
-            { size: "5kg", price: 80000 },
+        variants: [ 
             { size: "10kg", price: 155000 },
-            { size: "25kg", price: 380000 }
         ]
     }
 
@@ -223,7 +213,7 @@ function checkoutWhatsApp() {
     message += `Mohon segera diproses ya, terima kasih!`;
 
     // Ganti nomor di bawah dengan nomor WhatsApp toko Anda
-    const phoneNumber = "6282292533311"; 
+    const phoneNumber = "621327895047";
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
 }
 
